@@ -1,0 +1,103 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<!--<VBox class="sapUiSmallMargin">-->
+		<!--<f:SimpleForm id="SimpleFormDisplay"-->
+		<!--	editable="false"-->
+		<!--	layout="ResponsiveGridLayout"-->
+		<!--	title="Consultation"-->
+		<!--	labelSpanXL="6"-->
+		<!--	labelSpanL="4"-->
+		<!--	labelSpanM="2"-->
+		<!--	labelSpanS="2"-->
+		<!--	adjustLabelSpan="true"-->
+		<!--	emptySpanXL="4"-->
+		<!--	emptySpanL="4"-->
+		<!--	emptySpanM="4"-->
+		<!--	emptySpanS="2"-->
+		<!--	columnsXL="2"-->
+		<!--	columnsL="1"-->
+		<!--	columnsM="1"-->
+		<!--	singleContainerFullSize="false" >-->
+		<!--	<f:content>-->
+				<!--<core:Title text="Office" />-->
+		<!--		<Label text="Patient" />-->
+		<!--		<Text text="Patient" />-->
+		<!--		<Label text="Claim Date" />-->
+		<!--		<Text text="12/12/2019" />-->
+		<!--		<Label text="Name of Physician" />-->
+		<!--		<Text text="" />-->
+		<!--		<Label text="Consultation Type" />-->
+		<!--		<Text text="" />-->
+		
+		<!--		<Label text="Consult. No" />-->
+		<!--		<Text text="" />-->
+		<!--		<Label text="Out Station" />-->
+		<!--		<Text text="" />-->
+		<!--		<Label text="City type" />-->
+		<!--		<Text text="Patient" />-->
+		<!--		<Label text="Place" />-->
+		<!--		<Text text="12/12/2019" />-->
+		<!--		<Label text="Requested Amount" />-->
+		<!--		<Text text="" />-->
+		<!--		<Label text="Approved Amount " />-->
+		<!--		<Text text="" />-->
+		<!--		<Label text="Remarks Dropdown " />-->
+		<!--		<Text text="" />-->
+				
+				
+				
+				
+		<!--	</f:content>-->
+		<!--</f:SimpleForm>-->
+	<f:SimpleForm id="formClaimDisplay"
+			editable="false"
+			layout="ResponsiveLayout"
+			title="Claim" >
+			<f:content>
+					<Label text="Item code" />
+				<Text text="{detailMasterModel>C10T5}"  />
+				<Label text="Item Description" />
+				<Text text="{detailMasterModel>C40T3}"  />
+				<Label text="No of Items" />
+				<Text text="{detailMasterModel>C40T2}"  />
+				<Label text="Bill Number" />
+				<Text text="{detailMasterModel>C20T1}"  />
+				<Label text="GST No of Gail Unit" />
+				<Text text="{detailMasterModel>C40T4}"  />
+				<Label text="GST No of Vendor" />
+				<Text text="{detailMasterModel>C40T5}"  />
+				<Label text="GST Tax Rate" />
+				<Text text="{detailMasterModel>AMT07}"  />
+				<Label text="Base Value" />
+				<Text text="{detailMasterModel>AMT06}"  />
+				<Label text="CGST Amount" />
+				<Text text="{detailMasterModel>AMT02}"  />      
+				<Label text="SGST Amount" />
+				<Text text="{detailMasterModel>AMT05}"  />
+				
+				<Label text="IGST Amount" />
+			<Text text="{detailMasterModel>AMT04}"  />
+					<Label text="UGST Amount" />
+				<Text text="{detailMasterModel>AMT03}"  />
+				<Label text="HSN/SAC Code" />
+			<Text text="{detailMasterModel>C20T5}" />
+				<Label text="Vendor Name" />
+				<Text text="{detailMasterModel>C40T1}" />
+				<Label text="Bill Date" />
+				<Text text="{
+						path:'detailMasterModel>CDT01',
+						formatter:'.formatter.formatReqDate'
+						}" />
+				<Label text="Bill/Settelment Amount" />
+				<Text text="{detailMasterModel>AMT01}" />
+			
+				<Label text="Requested Amount" />
+			<Text text="{detailMasterModel>RQAMT}" />
+				
+			</f:content>
+		</f:SimpleForm>
+	<!--</VBox>-->
+</core:FragmentDefinition>

@@ -1,0 +1,106 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<!--<VBox class="sapUiSmallMargin">-->
+		<!--<f:SimpleForm id="SimpleFormDisplay"-->
+		<!--	editable="false"-->
+		<!--	layout="ResponsiveGridLayout"-->
+		<!--	title="Consultation"-->
+		<!--	labelSpanXL="6"-->
+		<!--	labelSpanL="4"-->
+		<!--	labelSpanM="2"-->
+		<!--	labelSpanS="2"-->
+		<!--	adjustLabelSpan="true"-->
+		<!--	emptySpanXL="4"-->
+		<!--	emptySpanL="4"-->
+		<!--	emptySpanM="4"-->
+		<!--	emptySpanS="2"-->
+		<!--	columnsXL="2"-->
+		<!--	columnsL="1"-->
+		<!--	columnsM="1"-->
+		<!--	singleContainerFullSize="false" >-->
+		<!--	<f:content>-->
+				<!--<core:Title text="Office" />-->
+		<!--		<Label text="Patient" />-->
+		<!--		<Input value="Patient" />-->
+		<!--		<Label text="Claim Date" />-->
+		<!--		<Input value="12/12/2019" />-->
+		<!--		<Label text="Name of Physician" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Consultation Type" />-->
+		<!--		<Input value="" />-->
+		
+		<!--		<Label text="Consult. No" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Out Station" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="City type" />-->
+		<!--		<Input value="Patient" />-->
+		<!--		<Label text="Place" />-->
+		<!--		<Input value="12/12/2019" />-->
+		<!--		<Label text="Requested Amount" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Approved Amount " />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Remarks Dropdown " />-->
+		<!--		<Input value="" />-->
+				
+				
+				
+				
+		<!--	</f:content>-->
+		<!--</f:SimpleForm>-->
+	<f:SimpleForm id="formClaimCreate"
+			editable="true"
+			layout="ResponsiveLayout"
+			title="Claim" >
+			<f:content>
+			
+				
+					<Label text="Item code" required="true" />
+							<Input id="itemCodeClaimCreate" showSuggestion="true" showValueHelp="true" valueHelpRequest="onPressShowDialog"/>
+				
+				<Label text="Item Description" />
+				<Input id="itemDescClaimCreate" enabled="false" />
+				
+				<Label text="No of Items" required="true" />
+				<Input value="" id="numItemClaimCreate"  type="Text" maxLength="40"   placeholder="Max 40 digits"  />
+				<Label text="Bill Number" required="true" />
+				<Input value="" id="billNumClaimCreate"  type="Text" maxLength="20"  placeholder="Max 20 digits"  />
+				<Label text="GST No of Gail Unit" />
+				<Input value="" id="gstNumClaimCreate"    type="Text" maxLength="40" placeholder="Max 40 digits"  />
+				<Label text="GST No of Vendor" />
+				<Input value="" id="gstNumVClaimCreate"  type="Text" maxLength="40"   placeholder="Max 40 digits"  />
+				<Label text="GST Tax Rate" />
+				<Input value="" id="gstTaxRateClaimCreate"  type="Number" liveChange="onChangeDecimal"  placeholder="Max 15 digits"  />
+				<Label text="Base Value" />
+				<Input value="" id="baseValueClaimCreate"    type="Number"  liveChange="onChangeDecimal" placeholder="Max 15 digits"  />
+				<Label text="CGST Amount" />
+				<Input value="" id="cgstClaimCreate"    type="Number" liveChange="onChangeDecimal"  placeholder="Max 15 digits"  />
+				<Label text="SGST Amount" />
+				<Input value="" id="sgstClaimCreate"    type="Number"  liveChange="onChangeDecimal" placeholder="Max 15 digits" />
+				
+				<Label text="IGST Amount" />
+				<Input value="" id="igstClaimCreate"   type="Number" liveChange="onChangeDecimal"  placeholder="Max 15 digits"  />
+					<Label text="UGST Amount" />
+				<Input value="" id="ugstClaimCreate"    type="Number" liveChange="onChangeDecimal"  placeholder="Max 15 digits"  />
+				<Label text="HSN/SAC Code" />
+				<Input value="" id="hsnCodeClaimCreate"     type="Text" maxLength="20"  placeholder="Max 20 digits"  />
+				<Label text="Vendor Name" />
+				<Input value="" id="venNameClaimCreate"     type="Text" maxLength="40"  placeholder="Max 40 digits" />
+				<Label text="Bill Date" required="true" />
+				<DatePicker id="billDateClaimCreate"  />
+				<Label text="Bill/Settelment Amount" required="true" />
+				<Input value="" id="billSAmtClaimCreate"  type="Number"  liveChange="onChangeDecimal" placeholder="Max 15 digits"  />
+			
+				<Label text="Requested Amount" required="true" />
+				<Input value="" id="reqAmtClaimCreate"  type="Number" liveChange="onChangeDecimal"  placeholder="Max 15 digits"   />
+				
+				
+				
+			</f:content>
+		</f:SimpleForm>
+	<!--</VBox>-->
+</core:FragmentDefinition>

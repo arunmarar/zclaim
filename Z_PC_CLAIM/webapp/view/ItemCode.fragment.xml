@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog 
+		title="Item"
+		class="sapUiPopupWithPadding"
+	items="{InitialModelItem>/}"
+		search="_handleItemValueHelpSearch"
+		confirm="_handleItemValueHelpClose"
+		cancel="_handleItemValueHelpClose">
+		<StandardListItem
+			iconDensityAware="false"
+			iconInset="false" title="{InitialModelItem>ITEMCODE}" 
+				info="{InitialModelItem>DESCRIPTION}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

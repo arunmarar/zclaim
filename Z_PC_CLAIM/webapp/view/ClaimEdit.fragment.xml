@@ -1,0 +1,103 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<!--<VBox class="sapUiSmallMargin">-->
+		<!--<f:SimpleForm id="SimpleFormDisplay"-->
+		<!--	editable="false"-->
+		<!--	layout="ResponsiveGridLayout"-->
+		<!--	title="Consultation"-->
+		<!--	labelSpanXL="6"-->
+		<!--	labelSpanL="4"-->
+		<!--	labelSpanM="2"-->
+		<!--	labelSpanS="2"-->
+		<!--	adjustLabelSpan="true"-->
+		<!--	emptySpanXL="4"-->
+		<!--	emptySpanL="4"-->
+		<!--	emptySpanM="4"-->
+		<!--	emptySpanS="2"-->
+		<!--	columnsXL="2"-->
+		<!--	columnsL="1"-->
+		<!--	columnsM="1"-->
+		<!--	singleContainerFullSize="false" >-->
+		<!--	<f:content>-->
+				<!--<core:Title text="Office" />-->
+		<!--		<Label text="Patient" />-->
+		<!--		<Input value="Patient" />-->
+		<!--		<Label text="Claim Date" />-->
+		<!--		<Input value="12/12/2019" />-->
+		<!--		<Label text="Name of Physician" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Consultation Type" />-->
+		<!--		<Input value="" />-->
+		
+		<!--		<Label text="Consult. No" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Out Station" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="City type" />-->
+		<!--		<Input value="Patient" />-->
+		<!--		<Label text="Place" />-->
+		<!--		<Input value="12/12/2019" />-->
+		<!--		<Label text="Requested Amount" />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Approved Amount " />-->
+		<!--		<Input value="" />-->
+		<!--		<Label text="Remarks Dropdown " />-->
+		<!--		<Input value="" />-->
+				
+				
+				
+				
+		<!--	</f:content>-->
+		<!--</f:SimpleForm>-->
+	<f:SimpleForm id="formClaimEdit"
+			editable="true"
+			layout="ResponsiveLayout"
+			title="Claim" >
+			<f:content>
+			<Label text="Item code" required="true" />
+			<Input id="itemCodeClaimEdit" showSuggestion="true" value="{detailMasterModel>C10T5}" showValueHelp="true" valueHelpRequest="onPressShowDialog"/>
+				
+				<!--<Input value="{detailMasterModel>C10T5}" id="itemCodeClaimEdit"    placeholder="Max 10 digits"  />-->
+				<Label text="Item Description" />
+				<Input value="{detailMasterModel>C40T3}" id="itemDescClaimEdit"   enabled="false" type="Text" disabled="true"   />
+				<Label text="No of Items" required="true" />
+				<Input value="{detailMasterModel>C40T2}" id="numItemClaimEdit"  type="Text" maxLength="40"  placeholder="Max 40 digits" />
+				<Label text="Bill Number" required="true" />
+				<Input value="{detailMasterModel>C20T1}" id="billNumClaimEdit"  type="Text" maxLength="20"  placeholder="Max 20 digits"  />
+				<Label text="GST No of Gail Unit" />
+				<Input value="{detailMasterModel>C40T4}" id="gstNumClaimEdit"    type="Text" maxLength="40"  placeholder="Max 40 digits"  />
+				<Label text="GST No of Vendor" />
+				<Input value="{detailMasterModel>C40T5}" id="gstNumVClaimEdit"    type="Text" maxLength="40"  placeholder="Max 40 digits"  />
+				<Label text="GST Tax Rate" />
+				<Input value="{detailMasterModel>AMT07}" id="gstTaxRateClaimEdit" liveChange="onChangeDecimal" type="Number"   placeholder="Max 15 digits"  />
+				<Label text="Base Value" />
+				<Input value="{detailMasterModel>AMT06}" id="baseValueClaimEdit" liveChange="onChangeDecimal"   type="Number"   placeholder="Max 15 digits"  />
+					<Label text="CGST Amount" />
+				<Input value="{detailMasterModel>AMT02}" id="cgstClaimEdit" liveChange="onChangeDecimal"   type="Number"   placeholder="Max 15 digits"  />
+				<Label text="SGST Amount" />
+				<Input value="{detailMasterModel>AMT05}" id="sgstClaimEdit"   type="Number" liveChange="onChangeDecimal"  placeholder="Max 15 digits"  />
+				
+				<Label text="IGST Amount" />
+				<Input value="{detailMasterModel>AMT04}" id="igstClaimEdit" liveChange="onChangeDecimal"  type="Number"   placeholder="Max 15 digits" />
+					<Label text="UGST Amount" />
+				<Input value="{detailMasterModel>AMT03}" id="ugstClaimEdit"  liveChange="onChangeDecimal" type="Number"   placeholder="Max 15 digits"  />
+				<Label text="HSN/SAC Code" />
+				<Input value="{detailMasterModel>C20T5}" id="hsnCodeClaimEdit"     type="Text" maxLength="20"  placeholder="Max 20 digits"  />
+				<Label text="Vendor Name" />
+				<Input value="{detailMasterModel>C40T1}" id="venNameClaimEdit"    type="Text" maxLength="40"  placeholder="Max 40 digits"  />
+				<Label text="Bill Date" required="true" />
+				<DatePicker id="billDateClaimEdit" dateValue="{detailMasterModel>CDT01}"  />
+				<Label text="Bill/Settelment Amount" required="true" />
+				<Input value="{detailMasterModel>AMT01}" id="billSAmtClaimEdit"  type="Number" liveChange="onChangeDecimal"  placeholder="Max 15 digits"  />
+			
+				<Label text="Requested Amount" required="true" />
+				<Input value="{detailMasterModel>RQAMT}" id="reqAmtClaimEdit"  type="Number"  liveChange="onLiveReqAmt2" placeholder="Max 15 digits"   />
+				
+				
+			</f:content>
+		</f:SimpleForm>
+	<!--</VBox>-->
+</core:FragmentDefinition>

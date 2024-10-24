@@ -1,0 +1,136 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Furnishing.controller.Review"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page title="Review Details" titleAlignment="Center"
+				showNavButton="true"
+				navButtonPress="onNavBack1">
+				<content>
+					
+					<Panel id="panel1">
+						
+						<FlexBox
+							height="30px"
+							alignItems="Start"
+							justifyContent="Center">
+							<items>
+								<Label text="Total Amount: " textAlign="Right" ></Label>
+								<Label id="rTotalAmt" design="Bold"></Label>
+							</items>
+						</FlexBox>
+						<FlexBox
+							height="30px"
+							alignItems="Start"
+							justifyContent="Center">
+							<items>
+								<Label text="File Size: " textAlign="Right" ></Label>
+								<Label id="rFilesize" design="Bold" ></Label>
+							</items>
+						</FlexBox>
+						<FlexBox
+							height="30px"
+							alignItems="Start"
+							justifyContent="Center">
+							<items>
+								<Label text="Type: " textAlign="Right" ></Label>
+								<Label id="Advancetype"  design="Bold" text=""  ></Label>
+								
+							</items>
+						</FlexBox>
+						
+					</Panel>
+					<Panel id="panel2"  >
+						
+							<Table id="reviewTable" growingScrollToLoad="true" 
+							growingThreshold="10"
+							growing="true"
+							alternateRowColors="false"
+							items="{detailMasterModel>/}" >
+							 
+								<columns>
+						    
+								<Column   demandPopin="true" width="25%" visible="{buttonsModel>/ClaimAndCAReview}">
+									<Text text="Bill Num"   />
+								</Column>
+								<Column   demandPopin="true"  visible="{buttonsModel>/advanceReview}">
+									<Text text="HOD"   />
+								</Column>
+								<Column  demandPopin="true" visible="{buttonsModel>/ClaimAndCAReview}"  >
+									<Text text="Bill Date" />
+								</Column>
+								<Column  demandPopin="true"  visible="{buttonsModel>/ClaimAndCAReview}" >
+									<Text text="Item" />
+								</Column>
+								<Column  demandPopin="true"  visible="{buttonsModel>/CAadvanceReview}" >
+									<Text text="Settlement Amt" />
+								</Column>
+									<Column  demandPopin="true"   visible="{buttonsModel>/ClaimReview}">
+									<Text text="Bill Amt" />
+								</Column>
+								<Column  demandPopin="true"  >
+									<Text text="Requested Amt" />
+								</Column>
+								
+						    </columns>
+							<items>
+								<ColumnListItem id="columnId" >
+									
+								<cells>	
+									
+										<Text text="{detailMasterModel>C20T1}" />
+										<ObjectIdentifier text="{detailMasterModel>C20T5}" 
+										title="{detailMasterModel>C40T3}" >
+											
+										</ObjectIdentifier>
+										
+							<Text text="{
+						path:'detailMasterModel>CDT01',
+						formatter:'.formatter.formatReqDate'
+						}" />
+						<ObjectIdentifier text="{detailMasterModel>C40T3}" 
+														title="{detailMasterModel>C10T5}" >
+											
+										</ObjectIdentifier>
+							
+							<Text text="{detailMasterModel>AMT01}" />
+							<Text text="{detailMasterModel>AMT01}" />
+							<Text text="{detailMasterModel>RQAMT}" />
+								
+											
+									
+										
+										
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						</Panel>
+					
+					
+				
+				
+			
+					
+					
+					
+					
+					
+					
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<Button icon="sap-icon://message-popup" type="Reject" id="errorBtn" press="handleMessagePopoverPress"  visible="false"></Button>
+						<!--<Button text="Attachment" type="Emphasized" id="attachBtn" press="onAttachment"  visible="{buttonsModel>/mAttach}"></Button>-->
+				
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button text="Print" type="Accept" id="printBtn" press="onPrint"  visible="{buttonsModel>/rPrint}"></Button>
+							<Button text="Delete" type="Reject" id="deleteBtn" press="onDelete"  visible="{buttonsModel>/rDelete}"></Button>
+						<Button text="Save Draft" type="Emphasized" id="draftBtn" press="onSaveDraft"  visible="{buttonsModel>/rSubmit}"></Button>
+						<Button text="Submit" type="Accept" id="submitBtn" press="onSubmit" visible="{buttonsModel>/rSubmit}"></Button>
+					</OverflowToolbar>
+				</footer>
+		
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
